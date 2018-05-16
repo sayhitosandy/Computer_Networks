@@ -1,0 +1,4 @@
+The assignment contains two files - Sender_2015085r1.java and Server_2015085r2.java.
+The 1st file implements the link state algorithm, viz, Dijkstra's Algorithm. It takes the input as specified in the question and builds an adjacency list. Then, it calculates the distances from a source vertex to every other vertex using the algorithm. Finally, the forwarding table is printed for that source vertex. All the steps are shown.
+The 2nd file implements the distance vector algorithm, viz, Bellman Ford. It takes the input as specified in the question and builds hashmap of edge costs, named, edges. Then, it calculates the distances based on the algorithm. Again, the forwading tables are printed.
+After any algorithm finishes, we allow the user to change the edge weights and even insert new nodes and edges. In every case, the routing tables are recalculated, and are shown.

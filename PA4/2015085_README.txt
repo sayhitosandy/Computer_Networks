@@ -1,0 +1,11 @@
+The assignment code consists of two files: Sender_2015085.java and Receiver_2015085.java. These files implement UDP Client and Server respectively, with additional functionalities as desired in the assignment. 
+The sender assumes the following information:
+1. Server/Receiver is at localhost with port 1222, unless specified.
+2. LossFlag is 0
+3. Total Data Size is 1,00,000 bytes.
+4. Maximum Segment Size (MSS) for each packet is 1,000 bytes.
+5. Initially, seqNo = 0.
+6. Initially, window size = 1000.
+Just for the sake of visualization, the data sent between the sender and receiver is a string of a's. It is divided into packets of size MSS. Sequence no. is then added to this packet with the help of ByteArrayOutputStream and DataOutputStream. In case the lossFlag = 0, the packet is sent to the receiver. Immidiately, we start a timer for that packet and store it in an ArrayList. Also, the packet in transmission is added to an ArrayList. The packet can also be dropped with some random probability or when lossFlag = 1.
+The packet is then received by the Receiver/Server. The server is always active and keeps on listening for any incoming packets. For every packet received, we store them in an ArrayList. The receiver decodes the sequence no. of each packet and analyses them. If one of the packets is missing, it sends back the previous ack. However, if all the packets have successsfully arrived, it sends the cummulative ack. 
+This ack is received by the Sender/Client. If the ack received is as desired, we increase the window size and send next packets. Also, the earlier ArrayLists are cleared. If the ack is not received and timeout occurs, we reduce the window size to 1 MSS, as required by TCP Reno. And we resend the packets with previous sequence no. Timeout can occur in two ways: either the packet's timer expires or the socket's timer expires. In both the cases, we restart from 1 MSS. Triple duplicate ack scenario has not been implemented. Also, the ack is always a cummulative ack.

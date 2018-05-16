@@ -1,0 +1,4 @@
+u x 5 u w 3 u v 7 x w 4 x y 7 x z 9 w v 3 w y 8 v y 4 y z 2#
+u v 2 u w 5 u x 1 v w 3 v x 2 x w 3 x y 1 w y 1 w z 5 y z 2#
+A B 2 A D 1 B D 3 B C 4 C D 5#
+Home A 3 Home C 5 Home B 2 A D 3 B D 1 B E 6 C E 2 D F 4 E F 1 E School 4 F School 2#
